@@ -1,0 +1,75 @@
+# ==========================================================================
+# MonoBau – Apache-Einstellungen für Hetzner Webhosting (Datei gehört in den Ordner "public_html")
+# Alle Blöcke sind mit IfModule abgesichert. Führt eine Zeile bei Ihrem Tarif zu "500 Internal Server
+# Error", die Zeile mit # auskommentieren und den Hetzner-Support fragen.
+# ==========================================================================
+
+AddDefaultCharset UTF-8
+
+# --- 1) Immer HTTPS und immer www.monobau.eu (gleiche Adresse wie in canonical/sitemap) ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Zertifikats-Prüfungen (Let's Encrypt) nicht umleiten
+  RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^www\.monobau\.eu$ [NC]
+  RewriteRule ^ https://www.monobau.eu%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- 2) Sicherheits-Header -----------------------------------------------------------------------
+# Hinweis: Die Content-Security-Policy steht zusätzlich als <meta> in den HTML-Dateien. Wird eine der
+# beiden Stellen geändert (z. B. neuer externer Dienst), bitte beide anpassen.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.open-meteo.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; manifest-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+
+# --- 3) Fehlerseiten --------------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
+# --- 4) Keine Verzeichnislisten, keine internen Dateien ausliefern ------------------------------------
+Options -Indexes
+<FilesMatch "(^\.(?!well-known)|\.(md|ps1|psd1|bak|log|sql|ini|json|lock|map)$)">
+  Require all denied
+</FilesMatch>
+
+# --- 5) Komprimierung ---------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/json application/javascript text/javascript image/svg+xml
+</IfModule>
+
+# --- 6) Zwischenspeicher im Browser ----------------------------------------------------------------------
+# CSS/JS tragen "?v=…" im Link: bei jeder Änderung die Zahl in den HTML-Dateien erhöhen.
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                "access plus 1 week"
+  ExpiresByType text/html       "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/css        "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType font/woff2      "access plus 1 year"
+  ExpiresByType image/jpeg      "access plus 1 month"
+  ExpiresByType image/png       "access plus 1 month"
+  ExpiresByType image/svg+xml   "access plus 1 month"
+</IfModule>
+
+# --- 7) Das Formular-Skript soll nie in Suchmaschinen auftauchen ---------------------------------------
+<IfModule mod_headers.c>
+  <Files "kontakt.php">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </Files>
+</IfModule>

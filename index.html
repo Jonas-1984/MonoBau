@@ -3,685 +3,466 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260826">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.open-meteo.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; manifest-src 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#131316">
+
+  <title>MonoBau GmbH Hamburg – Ausbau, Sanierung &amp; Renovierung</title>
+  <meta name="description" content="MonoBau GmbH aus Hamburg: Ausbau, Sanierung und Renovierung aus einer Hand – von der ersten Idee bis zur fertigen Übergabe. Projekte in Hamburg, deutschlandweit und im Ausland.">
+  <link rel="canonical" href="https://www.monobau.eu/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MonoBau GmbH">
+  <meta property="og:title" content="MonoBau GmbH Hamburg – Präzise gebaut. Sauber übergeben.">
+  <meta property="og:description" content="Ausbau, Sanierung und Renovierung in Hamburg und deutschlandweit – aus einer Hand.">
+  <meta property="og:url" content="https://www.monobau.eu/">
+  <meta property="og:image" content="https://www.monobau.eu/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Berghütte auf einem Grat im Nebel">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="images/background-mountain.jpg" as="image" media="(min-width: 641px)" fetchpriority="high">
+  <link rel="preload" href="images/background-mountain-m.jpg" as="image" media="(max-width: 640px)" fetchpriority="high">
+  <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261155">
+  <script src="boot.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "MonoBau GmbH",
+    "url": "https://www.monobau.eu/",
+    "image": "https://www.monobau.eu/images/og-image.jpg",
+    "telephone": "+494058969540",
+    "email": "info@monobau.eu",
+    "legalName": "MonoBau GmbH",
+    "founder": { "@type": "Person", "name": "Amir Hossein Sharifian" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pappelwisch 5",
+      "postalCode": "22415",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    },
+    "areaServed": ["Hamburg", "Deutschland"]
+  }
+  </script>
 </head>
 
-<body>
+<body id="top">
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <div class="background"></div>
+  <div class="background" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="glass-panel">
-        <img src="images/logo.png" alt="Logo" class="panel-logo">
+  <!-- ============ Kopfzeile ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="MonoBau – zum Seitenanfang">
+        <svg class="brand-mark" viewBox="0 0 900 217" aria-hidden="true">
+          <path class="b-ink" fill-rule="evenodd" d="M509.39 2.2C517.64 1.59 526.45 2.07 534.45 4.27C579.18 16.6 591.73 75.01 581.14 114.64C576.15 133.3 565.74 151.99 548.37 161.72C538.25 167.4 526.87 169.36 515.35 169.7C482.51 170.66 460.91 149.8 450.74 120.31C434.59 73.49 452.33 6.46 509.39 2.2ZM818.38 2.2C827.65 1.54 837.71 2.16 846.56 5.19C887.19 19.05 899.46 71.37 891.29 109.22C886.83 129.87 876.48 150.94 857.37 161.7C847.26 167.39 835.87 169.36 824.36 169.7C792.29 170.64 769.3 150.07 759.8 120.63C747.12 81.33 755.37 22.62 799.12 6.25C805.21 3.97 811.89 2.65 818.38 2.2ZM422.82 4.43C422.82 58.69 422.82 112.96 422.82 167.23C408.62 167.23 394.42 167.23 380.22 167.23C379.14 157.37 380.09 146.89 380.09 136.96C380.09 117.06 380.09 97.15 380.09 77.25C380.09 69.32 380.09 61.39 380.09 53.45C380.09 50.8 380.91 46.4 379.4 44.22C368.11 85.22 356.81 126.23 345.52 167.24C335.84 167.24 326.15 167.24 316.47 167.24C311.23 148.36 305.98 129.48 300.74 110.6C273.13 110.6 245.52 110.6 217.92 110.6C217.92 94.11 217.92 77.62 217.92 61.14C253.19 61.14 288.46 61.14 323.73 61.14C326.96 72.84 330.19 84.54 333.42 96.25C342.42 65.64 351.43 35.03 360.44 4.43C381.23 4.43 402.03 4.43 422.82 4.43ZM698.66 93.91C698.66 64.08 698.66 34.26 698.66 4.43C710.02 4.43 721.39 4.43 732.75 4.43C732.75 58.7 732.75 112.96 732.75 167.23C720.66 167.23 708.57 167.23 696.48 167.23C677.79 132.7 659.1 98.16 640.42 63.63C640.42 98.16 640.42 132.7 640.42 167.23C629.03 167.23 617.65 167.23 606.26 167.23C606.26 113.13 606.26 59.03 606.26 4.93C609.39 3.7 613.67 4.41 617.01 4.41C624.54 4.41 632.07 4.41 639.6 4.41C642.16 4.41 648.37 3.27 650.43 4.88C652.13 6.21 653.17 9.75 654.18 11.64C657.17 17.24 660.21 22.83 663.19 28.43C670.98 43.07 678.89 57.64 686.77 72.23C690.53 79.22 693.69 87.78 698.66 93.91ZM510.94 38.06C499.19 39.74 493.98 51.75 491.7 61.91C490.65 66.6 490.17 71.25 489.73 76.04C487.92 96.03 489.27 136.32 518.18 133.94C529.92 132.98 536.1 120.93 538.24 110.76C539.25 105.96 540.01 101.11 540.2 96.21C541.01 76.11 541.94 33.62 510.94 38.06ZM819.64 38.1C808.35 40.02 802.9 51.48 800.74 61.51C799.7 66.35 799.02 71.09 798.77 76.04C797.78 96.04 797.4 136.49 827.19 133.94C838.84 132.94 845.24 120.94 847.2 110.74C848.11 106.05 848.92 101.39 849.13 96.62C849.31 92.86 849.6 89.09 849.56 85.32C849.35 66.54 846.58 33.5 819.64 38.1ZM210.53 61.14C210.53 77.4 210.53 93.66 210.53 109.93C208.08 111.37 203.92 110.59 201.1 110.59C193.57 110.59 186.04 110.59 178.51 110.59C152.96 110.59 127.41 110.59 101.86 110.59C95 110.59 88.14 110.59 81.29 110.59C78.57 110.59 74.72 111.31 72.34 109.93C72.34 93.66 72.34 77.4 72.34 61.14C118.41 61.14 164.47 61.14 210.53 61.14ZM141.88 117.86C141.88 134.32 141.88 150.78 141.88 167.24C95.81 167.24 49.74 167.24 3.67 167.24C3.67 150.78 3.67 134.32 3.67 117.86C49.74 117.86 95.81 117.86 141.88 117.86ZM287.22 117.85C287.22 134.32 287.22 150.78 287.22 167.25C241.17 167.25 195.12 167.25 149.07 167.25C149.07 150.78 149.07 134.32 149.07 117.85C195.12 117.85 241.17 117.85 287.22 117.85Z" />
+          <path class="b-red" fill-rule="evenodd" d="M308.65 5.04C313.07 21.36 317.49 37.67 321.91 53.99C276.51 53.99 231.11 53.99 185.71 53.99C185.71 37.55 185.71 21.11 185.71 4.67C192.69 2.98 207.4 4.33 215.22 4.33C235.79 4.33 256.36 4.33 276.94 4.33C284.33 4.33 291.73 4.33 299.13 4.33C301.98 4.33 306.15 3.54 308.65 5.04Z" />
+          <path class="b-sub" fill-rule="evenodd" d="M75.3 178.9C80.85 178.77 86.54 180.21 89.69 185.22C95 193.65 91.81 207.84 81.07 209.97C75.08 211.16 68.35 210.15 64.16 205.49C55.39 195.75 62.49 179.2 75.3 178.9ZM170.51 178.9C175.36 178.77 180.41 179.7 183.76 183.54C190.86 191.67 187.65 207.41 176.5 209.96C170.5 211.33 162.99 210.07 159.09 205C151.35 194.92 157.62 179.25 170.51 178.9ZM411.7 187.89C410.89 187.89 410.08 187.89 409.27 187.89C406.22 178.46 391.3 180.56 392.01 187.79C392.32 190.94 396.24 191.76 398.77 192.09C404.99 192.88 415.95 194.83 412.72 203.9C408.99 214.37 386.01 211.68 388.28 199.94C391.6 198.9 391.49 203.9 393.93 205.74C398.07 208.86 408.02 208.52 409.74 202.63C410.88 198.71 407.34 197.38 404.43 196.4C399.42 194.7 389.14 196.03 389.04 188.21C389.01 186.34 389.24 184.7 390.25 183.09C394.72 175.95 413.58 177.99 411.7 187.89ZM577.87 187.86C577.07 187.86 576.26 187.86 575.46 187.86C574.48 185.34 573.83 183.33 571.06 182.26C567.09 180.72 558.04 181.56 558.2 187.38C558.29 190.72 562.32 191.79 564.98 192.11C571.58 192.92 582.8 194.91 578.78 204.63C574.81 214.22 552.19 211.47 554.48 199.78C555.15 199.78 555.83 199.78 556.5 199.78C558.16 201.43 557.98 204.14 560.18 205.71C563.97 208.4 574.88 208.9 575.96 202.69C577.74 192.49 558.48 198.8 555.75 189.9C555.11 187.79 555.18 185.92 556.06 183.85C559.56 175.59 580.4 177.97 577.87 187.86ZM8.03 179.81C9.59 179.81 11.15 179.81 12.71 179.81C17.01 188.55 21.31 197.29 25.62 206.03C29.92 197.31 34.22 188.59 38.53 179.87C39.87 179.87 41.21 179.87 42.56 179.87C43.26 187.36 42.67 195.18 42.67 202.71C42.67 205.19 43.81 209.35 40.54 209.62C39.04 208.06 39.74 204.76 39.76 202.71C39.79 198.51 41.08 187 39.43 183.75C36.14 187.37 32.6 197.85 30.22 202.72C29.37 204.47 28.49 208.66 26.56 209.5C23.44 210.86 22.1 206.66 21.14 204.61C17.91 197.77 14.66 190.87 11.5 183.97C10.06 185.25 10.84 189.06 10.86 191.01C10.93 196.86 11.93 203.76 10.69 209.46C9.8 209.46 8.92 209.46 8.03 209.46C8.03 199.58 8.03 189.69 8.03 179.81ZM110.04 179.98C115.05 179.29 116.67 182.96 119.38 186.6C124.09 192.92 128.93 200.21 134.54 205.73C134.81 197.11 135.07 188.5 135.34 179.88C136.2 179.88 137.06 179.88 137.92 179.88C137.92 189.64 137.92 199.4 137.92 209.17C133.07 210.75 131.54 206.46 128.94 203.24C123.73 196.79 119.08 189.74 113.56 183.56C113.29 192.2 113.02 200.83 112.75 209.47C111.85 209.47 110.94 209.47 110.04 209.47C110.04 199.64 110.04 189.81 110.04 179.98ZM231.08 180.02C235.26 179.32 246.86 178.74 250.64 180.36C256.31 182.8 256.61 190.36 251.32 193.43C252.42 194.44 253.96 195.05 254.88 196.33C257.73 200.33 256.03 207 251.38 208.78C247.3 210.34 235.15 210.46 231.08 209.17C231.08 199.45 231.08 189.74 231.08 180.02ZM288.64 179.96C292.88 189.7 297.12 199.43 301.37 209.17C297.96 210.99 295.7 202.55 294.52 200.14C289.2 200.14 283.87 200.14 278.55 200.14C277.09 202.8 275.49 210.39 271.69 209.38C271.32 206.97 273.78 203.69 274.78 201.49C278.07 194.32 281.23 187.11 284.6 179.96C285.95 179.96 287.29 179.96 288.64 179.96ZM318.09 179.96C318.89 179.96 319.7 179.96 320.51 179.96C322.25 189.74 315.3 208.46 331.4 207.63C342.89 207.04 340.84 195.45 340.84 186.98C340.84 184.82 340.19 181.51 341.48 179.77C345.28 180.02 343.81 185.98 343.81 189C343.81 196.43 345.25 208.2 335.35 209.99C328.84 211.17 320.68 210.16 318.22 203.12C316.99 199.58 317.8 194.71 317.8 191.01C317.8 187.56 317.13 183.27 318.09 179.96ZM445.56 180.03C449.52 186.35 452.21 194.15 455.16 201.01C456.23 203.48 458.92 206.95 458.47 209.58C454.37 209.72 453.44 203.13 451.61 200.15C446.23 200.15 440.86 200.15 435.48 200.15C434.44 202.74 432.54 210.46 429.02 209.34C428.57 206.9 430.92 203.99 431.86 201.75C433.96 196.72 436.46 191.81 438.74 186.85C439.59 184.99 440.31 181.64 441.9 180.28C442.92 179.41 444.36 179.79 445.56 180.03ZM480.26 179.92C484.42 188.59 488.59 197.26 492.76 205.94C496.97 197.24 501.17 188.54 505.38 179.84C506.91 179.84 508.44 179.84 509.97 179.84C509.97 189.72 509.97 199.59 509.97 209.46C509.08 209.46 508.18 209.46 507.28 209.46C507.01 200.89 506.75 192.31 506.48 183.74C502.44 192.34 498.41 200.94 494.37 209.54C493.43 209.54 492.49 209.54 491.55 209.54C487.22 200.95 482.88 192.35 478.55 183.75C476.86 186.64 478.13 198.75 478.17 202.71C478.2 204.77 478.95 208.04 477.43 209.62C474.18 209.33 475.32 205.17 475.32 202.71C475.32 195.18 474.77 187.41 475.41 179.92C477.03 179.92 478.64 179.92 480.26 179.92ZM600.31 180.12C600.31 184.15 600.31 188.19 600.31 192.22C606.86 192.22 613.41 192.22 619.96 192.22C619.96 188.1 619.96 183.99 619.96 179.87C620.96 179.87 621.96 179.87 622.95 179.87C622.95 189.75 622.95 199.64 622.95 209.52C622.17 209.52 621.39 209.52 620.6 209.52C618.79 207 620.3 198.69 619.75 195.16C613.39 195.16 607.02 195.16 600.66 195.16C599.78 198.42 601.54 207.71 599.43 209.57C596.42 209.59 597.46 205.21 597.46 203.12C597.46 199.26 596.56 183.07 597.49 180.58C597.94 179.38 599.46 179.93 600.31 180.12ZM653.32 179.83C654.39 179.83 655.47 179.83 656.54 179.83C660.24 186.56 663.13 193.94 666.19 200.97C667.28 203.49 669.87 206.84 669.5 209.57C665.31 209.78 664.66 203.01 662.6 200.15C657.22 200.15 651.84 200.15 646.46 200.15C645.62 202.7 643.45 210.7 640 209.26C639.61 206.86 641.96 204 642.88 201.79C645.17 196.26 649.86 184.13 653.32 179.83ZM707.76 195.45C711.29 197.83 712.66 205.32 711.81 209.52C711 209.52 710.2 209.52 709.39 209.52C707.99 206.38 709.18 202.24 707.73 199.32C706.13 196.11 693.08 196.26 690.03 197.26C689.18 200.31 691.71 209.26 687.61 209.62C686.03 208.03 686.79 204.43 686.79 202.31C686.79 196.91 685.58 184.68 687.04 180.12C689.55 179.19 692.98 179.74 695.67 179.74C701.94 179.74 711.2 178.88 711.81 187.38C712.15 192.13 709.1 192.35 707.76 195.45ZM733.57 180.01C733.57 189.82 733.57 199.63 733.57 209.44C732.55 209.44 731.52 209.44 730.5 209.44C730.5 199.63 730.5 189.82 730.5 180.01C731.52 180.01 732.55 180.01 733.57 180.01ZM775.39 180.52C775.07 183.04 772.79 182.39 770.71 182.39C766 182.39 760.81 181.79 756.19 182.65C756.19 185.98 756.19 189.3 756.19 192.63C761.84 192.89 767.49 193.15 773.14 193.41C773.14 194.09 773.14 194.77 773.14 195.45C767.52 195.72 761.91 195.99 756.29 196.26C755.59 199.92 757.73 206.51 755.48 209.49C754.71 209.49 753.94 209.49 753.16 209.49C753.16 199.7 753.16 189.91 753.16 180.12C758.25 178.92 764.27 179.74 769.5 179.74C771.41 179.74 773.89 179.24 775.39 180.52ZM792.96 179.85C793.96 179.85 794.97 179.85 795.97 179.85C795.97 189.73 795.97 199.61 795.97 209.5C794.97 209.5 793.96 209.5 792.96 209.5C792.96 199.61 792.96 189.73 792.96 179.85ZM829.61 180.09C832.93 186.99 836.12 194.01 839.16 201.04C840.21 203.48 842.86 206.88 842.51 209.5C838.64 210 837.13 203.07 835.66 200.15C830.28 200.15 824.9 200.15 819.52 200.15C818.51 202.78 816.51 210.24 813.07 209.41C812.52 207.09 814.74 204.07 815.74 201.95C818.42 196.29 820.83 190.44 823.62 184.84C825.18 181.74 825.39 179.06 829.61 180.09ZM883.66 205.38C885.35 202.83 884.17 189.54 884.17 185.77C884.17 183.11 883.12 179.19 886.89 180.07C888.36 184.66 887.17 196.53 887.17 201.9C887.17 204.25 887.78 207.53 886.56 209.57C882.38 209.91 880.85 206.61 878.59 203.58C875.21 199.04 871.5 194.73 868.15 190.15C866.77 188.26 865.05 185.1 863.09 183.96C862.02 185.06 862.54 187.74 862.54 189.4C862.54 194.11 862.54 198.81 862.54 203.52C862.54 205.57 863.52 210.14 860.26 209.44C858.99 207.68 859.64 204.44 859.64 202.31C859.64 197.45 858.46 183.93 859.94 180.12C864.3 178.73 865.75 182.88 868.14 185.74C873.46 192.1 877.93 199.4 883.66 205.38ZM75.31 181.76C58.51 182.74 60.25 208.99 77.24 207.63C93.97 206.29 92.81 180.73 75.31 181.76ZM170.51 181.76C153.77 182.79 155.51 208.86 172.45 207.63C189.17 206.42 188.15 180.68 170.51 181.76ZM234.16 192.18C238.88 192.36 252.03 194.67 252.02 187.38C252.02 180.6 238.69 182.03 234.16 182.56C234.16 185.76 234.16 188.97 234.16 192.18ZM689.8 193.79C694.8 194.92 708.83 195.73 708.83 188.19C708.82 180.56 694.88 181.97 689.8 182.54C689.8 186.29 689.8 190.04 689.8 193.79ZM286.62 182.93C284.47 187.6 282.32 192.28 280.17 196.95C281.91 197.61 291.76 197.63 293.04 196.66C290.9 192.08 288.76 187.51 286.62 182.93ZM443.55 182.9C441.49 187.67 439.43 192.43 437.37 197.2C441.58 197.2 445.79 197.2 450 197.2C447.85 192.43 445.7 187.67 443.55 182.9ZM654.53 182.93C652.49 187.68 650.45 192.43 648.42 197.19C652.63 197.19 656.84 197.19 661.05 197.19C660.77 194.79 656.36 184.18 654.53 182.93ZM834.04 196.86C831.88 192.22 829.72 187.58 827.56 182.94C825.41 187.52 823.27 192.09 821.13 196.66C822.62 197.67 832.19 197.63 834.04 196.86ZM234.14 206.73C239.14 207.15 252.8 209.12 253.03 201.5C253.29 193.21 239.71 194.17 234.14 195.45C234.14 199.21 234.14 202.97 234.14 206.73Z" />
+        </svg>
+      </a>
 
-        <div class="view active" data-view="home">
-          <svg class="deco-line" viewBox="0 0 1600 200" preserveAspectRatio="none">
-            <path class="deco-line-base" pathLength="100"
-              d="M 0,100 L 160,100 L 160,60 L 320,60 L 320,20 L 480,20 L 530,180 L 580,20 L 660,20 L 660,180 L 1660,180" />
-            <path class="deco-line-pulse" pathLength="100"
-              d="M 0,100 L 160,100 L 160,60 L 320,60 L 320,20 L 480,20 L 530,180 L 580,20 L 660,20 L 660,180 L 1660,180" />
-          </svg>
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" class="nav-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 8L11.7317 3.13416C11.9006 3.04971 12.0994 3.0497 12.2683 3.13416L22 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 11V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="nav-label">Home</span></a></li>
+          <li><a href="#projekte"><svg xmlns="http://www.w3.org/2000/svg" class="nav-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7H16M8 7V3.6C8 3.26863 8.26863 3 8.6 3H15.4C15.7314 3 16 3.26863 16 3.6V7M8 7H16" stroke="currentColor" stroke-width="1.5"></path></svg><span class="nav-label">Projekte</span></a></li>
+          <li><a href="#ueber-uns"><svg xmlns="http://www.w3.org/2000/svg" class="nav-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 18V17C7 14.2386 9.23858 12 12 12V12C14.7614 12 17 14.2386 17 17V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4V3.6C3 3.26863 3.26863 3 3.6 3H20.4C20.7314 3 21 3.26863 21 3.6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="nav-label">Über uns</span></a></li>
+          <li><a href="#kontakt"><svg xmlns="http://www.w3.org/2000/svg" class="nav-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9L13.5 12L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 13.5H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 10.5H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 7.5V7C5 5.89543 5.89543 5 7 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H7C5.89543 19 5 18.1046 5 17V16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span class="nav-label">Kontakt</span></a></li>
+        </ul>
+        <a class="btn btn-red-glass glass nav-cta" href="#kontakt">Projekt anfragen</a>
+      </nav>
 
-          <div class="deco-letters">
-            <span style="left:680px; animation-delay:3.25s">M</span>
-            <span style="left:790px; animation-delay:3.56s">O</span>
-            <span style="left:900px; animation-delay:3.87s">N</span>
-            <span style="left:1010px; animation-delay:4.17s">O</span>
-            <span style="left:1120px; animation-delay:4.48s">B</span>
-            <span style="left:1230px; animation-delay:4.79s">A</span>
-            <span style="left:1340px; animation-delay:5.10s">U</span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span class="h-line"><span class="h-word">Präzise gebaut.</span></span>
+            <span class="h-line"><span class="h-word">Sauber <em>übergeben.</em></span></span>
+          </h1>
+          <div class="hero-sub">
+          <p class="hero-lead">
+            Die MonoBau GmbH ist ein Bauunternehmen in Hamburg für Ausbau, Sanierung und Renovierung –
+            von der ersten Idee bis zur fertigen Übergabe, aus einer Hand.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-red-glass btn-rect glass" href="#kontakt">Projekt anfragen</a>
+            <a class="btn btn-box glass" href="#ueber-uns">Über uns</a>
           </div>
-
-          <div class="timeline">
-            <svg class="timeline-line" viewBox="0 0 520 920" preserveAspectRatio="none">
-              <path d="M30,920 C200,700 200,220 30,0" />
-            </svg>
-
-            <div class="timeline-point"><span class="dot"></span><span class="label">Planung und Gestaltung</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Genehmigungen und
-                Formalitäten</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Materialauswahl</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Überwachung und Durchführung</span>
-            </div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Abdichtung</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Elektrik und Sanitär</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Heizung und Lüftung</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Dämmung</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Fenster und Türen</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Rohbau und Fundament</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Innenausbau</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Fassadengestaltung</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Qualitätskontrolle</span></div>
-            <div class="timeline-point"><span class="dot"></span><span class="label">Übergabe und Nachbetreuung</span>
-            </div>
-          </div>
-
-          <div class="comment-line">
-            <div class="comment-highlight"></div>
-            <div class="comment-track">
-              <div class="comment-set">
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-1.jpg" alt="Planung und Gestaltung"></div>
-                  <div class="comment-text">
-                    <h4>Planung und Gestaltung</h4>
-                    <p>Individuelle Konzepte, exakt abgestimmt auf Ihre Wünsche.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-2.jpg" alt="Genehmigungen und Formalitäten">
-                  </div>
-                  <div class="comment-text">
-                    <h4>Genehmigungen und Formalitäten</h4>
-                    <p>Wir übernehmen die komplette behördliche Abwicklung.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-3.jpg" alt="Materialauswahl"></div>
-                  <div class="comment-text">
-                    <h4>Materialauswahl</h4>
-                    <p>Hochwertige Materialien für nachhaltige Ergebnisse.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-4.jpg" alt="Überwachung und Durchführung">
-                  </div>
-                  <div class="comment-text">
-                    <h4>Überwachung und Durchführung</h4>
-                    <p>Sorgfältige Baubegleitung von Anfang bis Ende.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-5.jpg" alt="Abdichtung"></div>
-                  <div class="comment-text">
-                    <h4>Abdichtung</h4>
-                    <p>Zuverlässiger Schutz vor Feuchtigkeit und Witterung.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-6.jpg" alt="Elektrik und Sanitär"></div>
-                  <div class="comment-text">
-                    <h4>Elektrik und Sanitär</h4>
-                    <p>Fachgerechte Installation nach aktuellen Standards.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-7.jpg" alt="Heizung und Lüftung"></div>
-                  <div class="comment-text">
-                    <h4>Heizung und Lüftung</h4>
-                    <p>Effiziente Systeme für ein angenehmes Raumklima.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-8.jpg" alt="Dämmung"></div>
-                  <div class="comment-text">
-                    <h4>Dämmung</h4>
-                    <p>Optimale Energieeffizienz für Ihr Zuhause.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-9.jpg" alt="Fenster und Türen"></div>
-                  <div class="comment-text">
-                    <h4>Fenster und Türen</h4>
-                    <p>Präzise Montage für Sicherheit und Komfort.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-10.jpg" alt="Rohbau und Fundament"></div>
-                  <div class="comment-text">
-                    <h4>Rohbau und Fundament</h4>
-                    <p>Stabile Grundlagen für langlebige Bauwerke.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-11.jpg" alt="Innenausbau"></div>
-                  <div class="comment-text">
-                    <h4>Innenausbau</h4>
-                    <p>Detailverliebte Umsetzung bis ins letzte Detail.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-12.jpg" alt="Qualitätskontrolle"></div>
-                  <div class="comment-text">
-                    <h4>Qualitätskontrolle</h4>
-                    <p>Strenge Prüfung für höchste Ausführungsqualität.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comment-set" aria-hidden="true">
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-1.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Planung und Gestaltung</h4>
-                    <p>Individuelle Konzepte, exakt abgestimmt auf Ihre Wünsche.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-2.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Genehmigungen und Formalitäten</h4>
-                    <p>Wir übernehmen die komplette behördliche Abwicklung.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-3.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Materialauswahl</h4>
-                    <p>Hochwertige Materialien für nachhaltige Ergebnisse.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-4.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Überwachung und Durchführung</h4>
-                    <p>Sorgfältige Baubegleitung von Anfang bis Ende.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-5.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Abdichtung</h4>
-                    <p>Zuverlässiger Schutz vor Feuchtigkeit und Witterung.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-6.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Elektrik und Sanitär</h4>
-                    <p>Fachgerechte Installation nach aktuellen Standards.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-7.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Heizung und Lüftung</h4>
-                    <p>Effiziente Systeme für ein angenehmes Raumklima.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-8.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Dämmung</h4>
-                    <p>Optimale Energieeffizienz für Ihr Zuhause.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-9.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Fenster und Türen</h4>
-                    <p>Präzise Montage für Sicherheit und Komfort.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-10.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Rohbau und Fundament</h4>
-                    <p>Stabile Grundlagen für langlebige Bauwerke.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-11.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Innenausbau</h4>
-                    <p>Detailverliebte Umsetzung bis ins letzte Detail.</p>
-                  </div>
-                </div>
-                <div class="comment-item">
-                  <div class="comment-avatar"><img src="leistung/leistung-12.jpg" alt=""></div>
-                  <div class="comment-text">
-                    <h4>Qualitätskontrolle</h4>
-                    <p>Strenge Prüfung für höchste Ausführungsqualität.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-grid">
-            <div class="gallery-col gallery-col-left">
-              <div class="gallery-cell gallery-cell-left" data-direction="up">
-                <div class="gallery-slice active"></div>
-                <div class="gallery-slice"></div>
-              </div>
-            </div>
-            <div class="gallery-col gallery-col-middle">
-              <div class="gallery-cell gallery-cell-mid-top" data-direction="down">
-                <div class="gallery-slice active"></div>
-                <div class="gallery-slice"></div>
-              </div>
-              <div class="gallery-cell gallery-cell-mid-bottom" data-direction="down">
-                <div class="gallery-slice active"></div>
-                <div class="gallery-slice"></div>
-              </div>
-            </div>
-            <div class="gallery-col gallery-col-right">
-              <div class="gallery-cell gallery-cell-right-top" data-direction="up">
-                <div class="gallery-slice active"></div>
-                <div class="gallery-slice"></div>
-              </div>
-              <div class="gallery-cell gallery-cell-right-bottom" data-direction="up">
-                <div class="gallery-slice active"></div>
-                <div class="gallery-slice"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="view text-page" data-view="ueber-uns">
-          <div class="view-content">
-            <h2 class="view-title">Über uns</h2>
-            <p class="view-subtitle">Wir sind ein Bauunternehmen aus Hamburg, das für zuverlässige Arbeit, durchdachte Planung und hochwertige handwerkliche Ausführung steht. Die MonoBau GmbH vereint ein Team aus erfahrenen Facharbeitern und Meistern, die jedes Projekt mit Präzision, sauberer Arbeitsweise und echter Verantwortung umsetzen.</p>
-
-            <p class="view-subtitle">Unsere Stärke liegt in einer klaren Struktur, vernünftigen Lösungen und einer Arbeitsweise, die sowohl fachlich als auch menschlich überzeugt. Wir begleiten unsere Kunden von der ersten Idee bis zur fertigen Umsetzung und legen dabei großen Wert auf Transparenz, Vertrauen und eine professionelle Zusammenarbeit.</p>
-
-            <p class="view-subtitle">Als Hamburger Unternehmen arbeiten wir sowohl in der Stadt als auch in der Umgebung und stehen für Ergebnisse, die lange halten und sichtbar Qualität zeigen.</p>
-          </div>
-
-          <picture>
-            <source srcset="images/ueberuns.webp" type="image/webp">
-            <img src="images/ueberuns.png" alt="Über uns" class="ueberuns-image">
-          </picture>
-        </div>
-
-        <div class="view" data-view="leistungen">
-          <div class="leistungen-box-bg">
-            <img class="leistungen-box-image active" src="blackboard/01-drywall.jpg" alt="">
-            <img class="leistungen-box-image" src="" alt="">
-          </div>
-
-          <div class="leistungen-image-wrap">
-            <img class="leistungen-image" src="leistung/1-trockenbau.jpg" alt="">
-          </div>
-
-          <div class="view-content">
-            <h2 class="view-title">Leistungen</h2>
-
-            <div class="leistungen-card">
-              <div class="leistungen-slides">
-                <div class="leistungen-slide active" data-index="0">
-                  <h3>Trockenbauarbeiten</h3>
-                  <p>Errichtung von Trennwänden, Abhangdecken, Vorsatzschalen und Raumaufteilungen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="1">
-                  <h3>Innenputz &amp; Spachtelarbeiten</h3>
-                  <p>Glätten, Ausbessern und Vorbereiten von Wänden und Decken für weitere Beschichtungen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="2">
-                  <h3>Maler- und Lackierarbeiten</h3>
-                  <p>Streichen, Lackieren, Beschichten von Wänden, Türen, Holzflächen und Metall.</p>
-                </div>
-                <div class="leistungen-slide" data-index="3">
-                  <h3>Bodenverlegung</h3>
-                  <p>Verlegen von Laminat, Vinyl, Parkett, Teppichboden oder Fliesen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="4">
-                  <h3>Fliesenarbeiten</h3>
-                  <p>Wand- und Bodenfliesen, Bad- und Küchenfliesen, Abdichtung.</p>
-                </div>
-                <div class="leistungen-slide" data-index="5">
-                  <h3>Sanitär- und Badmodernisierung</h3>
-                  <p>Installation von Waschbecken, WC, Duschen, Armaturen, Rohrleitungen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="6">
-                  <h3>Elektroinstallation im Innenbereich</h3>
-                  <p>Steckdosen, Lichtschalter, Beleuchtung, Kabelverlegung.</p>
-                </div>
-                <div class="leistungen-slide" data-index="7">
-                  <h3>Türen- und Fensterarbeiten</h3>
-                  <p>Einbau von Innentüren, Zargen, Fensterbänken, Reparaturen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="8">
-                  <h3>Küchen- und Möbelmontage</h3>
-                  <p>Aufbau von Küchen, Schränken, Regalen, Arbeitsplatten.</p>
-                </div>
-                <div class="leistungen-slide" data-index="9">
-                  <h3>Renovierung &amp; Modernisierung</h3>
-                  <p>Komplettsanierungen, Teilrenovierungen, Modernisierung von Wohn- und Gewerberäumen.</p>
-                </div>
-                <div class="leistungen-slide" data-index="10">
-                  <h3>Bauendreinigung</h3>
-                  <p>Reinigung nach Bau- oder Renovierungsarbeiten.</p>
-                </div>
-              </div>
-
-              <div class="leistungen-footer">
-                <div class="leistungen-dots">
-                  <button class="leistungen-dot active" data-index="0" aria-label="Seite 1">1</button>
-                  <button class="leistungen-dot" data-index="1" aria-label="Seite 2">2</button>
-                  <button class="leistungen-dot" data-index="2" aria-label="Seite 3">3</button>
-                  <button class="leistungen-dot" data-index="3" aria-label="Seite 4">4</button>
-                  <button class="leistungen-dot" data-index="4" aria-label="Seite 5">5</button>
-                  <button class="leistungen-dot" data-index="5" aria-label="Seite 6">6</button>
-                  <button class="leistungen-dot" data-index="6" aria-label="Seite 7">7</button>
-                  <button class="leistungen-dot" data-index="7" aria-label="Seite 8">8</button>
-                  <button class="leistungen-dot" data-index="8" aria-label="Seite 9">9</button>
-                  <button class="leistungen-dot" data-index="9" aria-label="Seite 10">10</button>
-                  <button class="leistungen-dot" data-index="10" aria-label="Seite 11">11</button>
-                </div>
-                <button class="leistungen-next" type="button">Next</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="view" data-view="projekte">
-          <div class="view-content">
-            <div class="projekte-title-row">
-              <h2 class="view-title">Projekte</h2>
-              <button class="stadtteile-next-btn" id="stadtteile-next-btn" type="button" aria-label="Nächster Stadtteil">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-
-            <div class="projekte-search-wrap">
-              <div class="projekte-search-box">
-                <input type="text" class="projekte-search-input" id="projekte-search-input" placeholder="Stadtteil, Straße oder Postleitzahl suchen …" autocomplete="off">
-                <button type="button" class="projekte-search-icon-btn" id="projekte-search-icon-btn" aria-label="Suchen">
-                  <svg class="projekte-search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                </button>
-              </div>
-              <div class="projekte-search-results" id="projekte-search-results"></div>
-            </div>
-
-            <div class="stadtteile-hover-info">
-              <h3 id="stadtteile-hover-name">Hamburg</h3>
-              <p id="stadtteile-hover-text">Fahren Sie über einen Stadtteil, um mehr zu erfahren.</p>
-            </div>
-
-            <div class="projekte-image-wrap is-empty" id="projekte-image-wrap">
-              <button class="projekte-image-close" id="projekte-image-close" type="button" aria-label="Schließen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              </button>
-              <img class="projekte-gallery-image" id="projekte-gallery-image" src="" alt="">
-              <p class="projekte-gallery-placeholder">Die Bilder werden hochgeladen.</p>
-              <div class="projekte-gallery-dots" id="projekte-gallery-dots"></div>
-              <button class="projekte-next-btn" id="projekte-next-btn" type="button" aria-label="Nächstes Projekt">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-
-            <div class="stadtteile-map-wrap" id="stadtteile-map-wrap"></div>
-
-            <div class="projekte-region-panel" id="projekte-region-panel">
-              <button class="projekte-region-close" id="projekte-region-close" type="button" aria-label="Schließen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              </button>
-
-              <button class="projekte-region-back" id="projekte-region-back" type="button" aria-label="Zurück zur Karte">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                <span>Zurück zur Karte</span>
-              </button>
-
-              <h3 class="projekte-region-title" id="projekte-region-title">Projekte deutschlandweit</h3>
-
-              <div class="projekte-region-body">
-                <ul class="projekte-region-address-list" id="projekte-region-address-list"></ul>
-
-                <div class="projekte-region-gallery-wrap is-empty" id="projekte-region-gallery-wrap">
-                  <img class="projekte-region-gallery-image" id="projekte-region-gallery-image" src="" alt="">
-                  <p class="projekte-region-gallery-placeholder">Die Bilder werden hochgeladen.</p>
-                  <div class="projekte-region-gallery-dots" id="projekte-region-gallery-dots"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="projekte-scope">
-              <div class="projekte-scope-item">
-                <div class="projekte-scope-header">
-                  <h3>Projekte deutschlandweit</h3>
-                  <button class="projekte-scope-arrow" id="projekte-scope-arrow-de" type="button" aria-label="Projekte deutschlandweit anzeigen">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                  </button>
-                </div>
-                <p>Wir realisieren Bau- und Sanierungsprojekte in ganz Deutschland – zuverlässig, termingerecht
-                  und mit der gewohnten MonoBau-Qualität.</p>
-              </div>
-
-              <div class="projekte-scope-divider-h"></div>
-
-              <div class="projekte-scope-item">
-                <div class="projekte-scope-header">
-                  <h3>Projekte im Ausland</h3>
-                  <button class="projekte-scope-arrow" id="projekte-scope-arrow-int" type="button" aria-label="Projekte im Ausland anzeigen">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                  </button>
-                </div>
-                <p>Auch über die deutschen Landesgrenzen hinaus setzen wir anspruchsvolle Bauvorhaben für unsere
-                  internationalen Kunden um.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="view" data-view="kontakt">
-          <div class="kontakt-layout">
-            <div class="view-content contact-content">
-              <h2 class="view-title">Kontakt</h2>
-              <p class="view-subtitle">Wir freuen uns auf Ihre Nachricht.</p>
-
-              <form class="contact-form">
-                <div class="form-row">
-                  <label for="contact-name">Name</label>
-                  <input type="text" id="contact-name" name="name" autocomplete="name" required>
-                </div>
-
-                <div class="form-row">
-                  <label for="contact-email">E-Mail</label>
-                  <input type="email" id="contact-email" name="email" autocomplete="email" required>
-                </div>
-
-                <div class="form-row">
-                  <label for="contact-message">Nachricht</label>
-                  <textarea id="contact-message" name="message" rows="4" required></textarea>
-                </div>
-
-                <div class="form-row form-row-checkbox">
-                  <input type="checkbox" id="contact-privacy" name="privacy" required>
-                  <label for="contact-privacy">
-                    Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme
-                    der Verarbeitung meiner Daten zu.
-                  </label>
-                </div>
-
-                <button type="submit" class="form-submit">
-                  <span class="form-submit-full">Nachricht senden</span>
-                  <span class="form-submit-short">Senden</span>
-                </button>
-              </form>
-            </div>
-
-            <div class="contact-photo">
-              <div class="contact-photo-frame">
-                <img class="contact-photo-blur" src="images/seo.png" alt="" aria-hidden="true">
-                <img class="contact-photo-sharp" src="images/seo.png" alt="Amir Hossein Sharifian">
-              </div>
-              <p class="contact-info-label">Geschäftsführer:</p>
-              <p class="contact-photo-name">Amir Hossein Sharifian</p>
-            </div>
-
-            <div class="contact-side">
-              <div class="contact-divider"></div>
-              <div class="contact-right">
-                <div class="contact-map">
-                  <iframe class="contact-map-frame"
-                    data-src="https://www.google.com/maps?q=Pappelwisch+5,+22415+Hamburg&output=embed" width="100%"
-                    height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Mono Bau">
-                  </iframe>
-                  <div class="contact-map-placeholder">
-                    <p>Die Karte wird erst nach Ihrer Zustimmung zu externen Inhalten geladen.</p>
-                    <button type="button" class="form-submit contact-map-enable">Karte laden &amp; Cookies akzeptieren</button>
-                  </div>
-                </div>
-                <div class="contact-info">
-                  <p class="contact-info-name">Mono Bau</p>
-                  <p class="contact-info-line">
-                    <svg viewBox="0 0 24 24" class="contact-icon">
-                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>Pappelwisch 5, 22415 Hamburg</span>
-                  </p>
-                  <p class="contact-info-line">
-                    <svg viewBox="0 0 24 24" class="contact-icon">
-                      <path d="M14 6h8" />
-                      <path d="m18 2 4 4-4 4" />
-                      <path
-                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-                    </svg>
-                    <span>Tel: 040 589 695 40</span>
-                  </p>
-                  <p class="contact-info-line">
-                    <svg viewBox="0 0 24 24" class="contact-icon">
-                      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                      <path d="M12 18h.01" />
-                    </svg>
-                    <span>Mobile: +49 152 54184659</span>
-                  </p>
-                  <p class="contact-info-line">
-                    <svg viewBox="0 0 24 24" class="contact-icon">
-                      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                      <rect x="2" y="4" width="20" height="16" rx="2" />
-                    </svg>
-                    <a href="mailto:info@monobau.eu">info@monobau.eu</a>
-                  </p>
-                  <p class="contact-info-line">
-                    <svg viewBox="0 0 24 24" class="contact-icon">
-                      <path d="m15 6 2 2 4-4" />
-                      <path d="M2 12h20A10 10 0 1 1 12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 4-10" />
-                    </svg>
-                    <a href="https://www.monobau.eu" target="_blank" rel="noopener">www.monobau.eu</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <nav class="panel-menu">
-          <ul>
-            <li class="menu-item active" data-item="home">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 11.5 12 4l9 7.5" />
-                <path d="M5 10v10h5v-6h4v6h5V10" />
-              </svg>
-              <span>Home</span>
-            </li>
-            <li class="menu-item" data-item="ueber-uns">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="3.2" />
-                <path d="M5 20c0-4 3-6 7-6s7 2 7 6" />
-              </svg>
-              <span>Über uns</span>
-            </li>
-            <li class="menu-item" data-item="leistungen">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="2.6" />
-                <path
-                  d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
-              </svg>
-              <span>Leistungen</span>
-            </li>
-            <li class="menu-item" data-item="projekte">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
-              </svg>
-              <span>Projekte</span>
-            </li>
-            <li class="menu-item" data-item="kontakt">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
-                <path d="m3.5 6 8.5 7 8.5-7" />
-              </svg>
-              <span>Kontakt</span>
-            </li>
+          <div class="hero-meta">
+          <ul class="hero-facts">
+            <li><strong>11 Gewerke</strong><span>aus einer Hand</span></li>
+            <li><strong>Hamburg</strong><span>und deutschlandweit</span></li>
+            <li><strong>International</strong><span>auch im Ausland</span></li>
           </ul>
-        </nav>
+          <ul class="hero-icons" aria-hidden="true">
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M 19 3 L 5 3"/><path d="M 21 13 L 21 5"/><path d="M 21 5 A2 2 0 0 0 19 3"/><path d="M 3 19 A2 2 0 0 0 5 21"/><path d="M 3 5 L 3 19"/><path d="M 5 3 A2 2 0 0 0 3 5"/><path d="m16 19 2 2 4-4"/><path d="M16 2v3"/><path d="M3 9h18"/><path d="M5 21 L12.5 21"/><path d="M8 2v3"/></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1"/><path d="M19 10h1a2 2 0 012 2v1"/><path d="M5 10H4a2 2 0 00-2 2v1"/><circle cx="12" cy="11" r="3"/><circle cx="18" cy="4" r="2"/><circle cx="6" cy="4" r="2"/></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1-1.517-.86z"/><path d="M21 12.17V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="m6 21 5-5"/><circle cx="9" cy="9" r="2"/></svg></li>
+          </ul>
+          </div>
+          </div>
+          <!-- Handy/Tablet: Das Ablauf-Kaestchen wird per Skript hierher verschoben -->
+          <div class="hero-flow-slot" id="hero-flow-slot"></div>
+        </div>
+      </div>
 
-        <div class="weather-widget">
-          <span class="weather-weekday">–</span>
-          <span class="weather-date">--.--.----</span>
-          <span class="weather-time">--:--</span>
-          <span class="weather-icon">–</span>
-          <span class="weather-temp">--°C</span>
-          <span class="weather-city">Hamburg</span>
+      <figure class="hero-photo glass">
+        <picture>
+        <source media="(max-width: 960px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+        <img src="images/hero-aquarell.jpg" width="901" height="1640" fetchpriority="high" decoding="async"
+          alt="Aquarell einer Villa mit weißer Stuckfassade im Abendlicht, mit Balkon, Rundbogenfenstern, Schmiedetor und Herbstlaub">
+        </picture>
+      </figure>
+      <!-- Bauprofil: Treppe des Logos als gezeichnete Linie -->
+      <svg class="hero-profile" viewBox="0 0 1600 200" preserveAspectRatio="none" aria-hidden="true">
+        <path class="profile-base" vector-effect="non-scaling-stroke" pathLength="100"
+          d="M 0,100 L 160,100 L 160,60 L 320,60 L 320,20 L 480,20 L 530,180 L 580,20 L 660,20 L 660,180 L 1600,180" />
+        <path class="profile-pulse" vector-effect="non-scaling-stroke" pathLength="100"
+          d="M 0,100 L 160,100 L 160,60 L 320,60 L 320,20 L 480,20 L 530,180 L 580,20 L 660,20 L 660,180 L 1600,180" />
+      </svg>
+    </section>
+
+    <!-- ============ Ablauf: Schritte erscheinen nacheinander ============ -->
+    <section class="section ablauf" id="ablauf" aria-labelledby="ablauf-title">
+      <div class="container">
+        <h2 id="ablauf-title" class="sr-only">Unser Ablauf – vom ersten Stein bis zur Übergabe</h2>
+        <div class="flow reveal" id="flow" role="group" aria-labelledby="ablauf-title">
+          <ol class="flow-list" id="flow-list">
+          <li class="flow-card glass"><h3>Planung und Gestaltung</h3><p>Individuelle Konzepte, exakt abgestimmt auf Ihre Wünsche.</p></li>
+          <li class="flow-card glass"><h3>Genehmigungen und Formalitäten</h3><p>Wir übernehmen die komplette behördliche Abwicklung.</p></li>
+          <li class="flow-card glass"><h3>Materialauswahl</h3><p>Hochwertige Materialien für nachhaltige Ergebnisse.</p></li>
+          <li class="flow-card glass"><h3>Rohbau und Fundament</h3><p>Stabile Grundlagen für langlebige Bauwerke.</p></li>
+          <li class="flow-card glass"><h3>Abdichtung</h3><p>Zuverlässiger Schutz vor Feuchtigkeit und Witterung.</p></li>
+          <li class="flow-card glass"><h3>Dämmung</h3><p>Optimale Energieeffizienz für Ihr Zuhause.</p></li>
+          <li class="flow-card glass"><h3>Fenster und Türen</h3><p>Präzise Montage für Sicherheit und Komfort.</p></li>
+          <li class="flow-card glass"><h3>Elektrik und Sanitär</h3><p>Fachgerechte Installation nach aktuellen Standards.</p></li>
+          <li class="flow-card glass"><h3>Heizung und Lüftung</h3><p>Effiziente Systeme für ein angenehmes Raumklima.</p></li>
+          <li class="flow-card glass"><h3>Innenausbau</h3><p>Detailverliebte Umsetzung bis ins letzte Detail.</p></li>
+          <li class="flow-card glass"><h3>Fassadengestaltung</h3><p>Eine Außenhülle, die zum Gebäude und zu Ihren Vorstellungen passt.</p></li>
+          <li class="flow-card glass"><h3>Überwachung und Durchführung</h3><p>Sorgfältige Baubegleitung von Anfang bis Ende.</p></li>
+          <li class="flow-card glass"><h3>Qualitätskontrolle</h3><p>Strenge Prüfung für höchste Ausführungsqualität.</p></li>
+          <li class="flow-card glass"><h3>Übergabe und Nachbetreuung</h3><p>Gemeinsame Abnahme – und ein Ansprechpartner, auch danach.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <!-- ============ Projekte: Galerie-Kästchen ============ -->
+    <section class="section projekte" id="projekte" aria-labelledby="projekte-title">
+      <div class="container projekte-grid">
+        <div class="projekte-copy">
+          <h2 id="projekte-title" class="reveal">Zuhause in Hamburg.<br>Unterwegs überall.</h2>
+          <div class="scope reveal glass">
+            <h3>Projekte deutschlandweit</h3>
+            <p>Wir realisieren Bau- und Sanierungsprojekte in ganz Deutschland – zuverlässig, termingerecht und mit der gewohnten MonoBau-Qualität.</p>
+          </div>
+          <div class="scope reveal glass">
+            <h3>Projekte im Ausland</h3>
+            <p>Auch über die deutschen Landesgrenzen hinaus setzen wir anspruchsvolle Bauvorhaben für unsere internationalen Kunden um.</p>
+          </div>
         </div>
 
-        <!-- Social-Links hier eintragen -->
-        <div class="social-links">
-          <a href="https://facebook.com" target="_blank" rel="noopener">
-            <img src="icons/Facebook.png" alt="Facebook">
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener">
-            <img src="icons/Instagram.png" alt="Instagram">
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">
-            <img src="icons/LinkedIn.png" alt="LinkedIn">
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener">
-            <img src="icons/YouTube.png" alt="YouTube">
-          </a>
+        <div class="slider glass reveal" id="slider" role="region" aria-roledescription="Karussell" aria-label="Projektbilder">
+          <div class="slides" id="slides">
+          <figure class="slide is-active is-portrait" role="group" aria-roledescription="Bild" aria-label="1 von 12">
+            <img src="projects/slides/hallerstrasse-01.jpg" data-src="projects/slides/hallerstrasse-01.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="2 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-02.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="3 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-03.jpg" width="1120" height="745" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="4 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-04.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="5 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-05.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="6 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-06.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="7 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-08.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="8 von 12" aria-hidden="true">
+            <img data-src="projects/slides/hallerstrasse-09.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="9 von 12" aria-hidden="true">
+            <img data-src="projects/slides/langenhorn-03.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="10 von 12" aria-hidden="true">
+            <img data-src="projects/slides/langenhorn-01.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="11 von 12" aria-hidden="true">
+            <img data-src="projects/slides/langenhorn-02.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="Bild" aria-label="12 von 12" aria-hidden="true">
+            <img data-src="projects/slides/langenhorn-04.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
+          </figure>
+          </div>
+
+          <button type="button" class="slider-arrow slider-prev glass" id="slider-prev" aria-label="Vorheriges Bild">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <button type="button" class="slider-arrow slider-next glass" id="slider-next" aria-label="Nächstes Bild">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+
+          <div class="slider-progress" aria-hidden="true"><span id="slider-progress"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Über uns ============ -->
+    <section class="section about" id="ueber-uns" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <h2 id="about-title" class="reveal">Zuverlässige Arbeit.<br>Echte Verantwortung.</h2>
+          <p class="lead reveal">
+            Wir sind ein Bauunternehmen aus Hamburg, das für zuverlässige Arbeit, durchdachte Planung und
+            hochwertige handwerkliche Ausführung steht. Die MonoBau GmbH vereint ein Team aus erfahrenen
+            Facharbeitern und Meistern, die jedes Projekt mit Präzision, sauberer Arbeitsweise und echter
+            Verantwortung umsetzen.
+          </p>
+          <p class="reveal">
+            Unsere Stärke liegt in einer klaren Struktur, vernünftigen Lösungen und einer Arbeitsweise, die
+            sowohl fachlich als auch menschlich überzeugt. Wir begleiten unsere Kunden von der ersten Idee bis
+            zur fertigen Umsetzung und legen dabei großen Wert auf Transparenz, Vertrauen und eine
+            professionelle Zusammenarbeit.
+          </p>
+          <p class="reveal">
+            Als Hamburger Unternehmen arbeiten wir sowohl in der Stadt als auch in der Umgebung und stehen für
+            Ergebnisse, die lange halten und sichtbar Qualität zeigen.
+          </p>
+
+          <ul class="values" data-stagger>
+            <li class="reveal glass"><strong>Präzision</strong><span>Maßgenau geplant, sauber ausgeführt.</span></li>
+            <li class="reveal glass"><strong>Sauberkeit</strong><span>Eine Baustelle, die man gern betritt.</span></li>
+            <li class="reveal glass"><strong>Verantwortung</strong><span>Ein Ansprechpartner von Anfang bis Ende.</span></li>
+          </ul>
         </div>
 
-        <div class="copyright">
-          <button type="button" class="cookie-settings-link">Cookie-Einstellungen</button>
-          © Designed by Jonas Shojaei
+        <figure class="about-portrait reveal">
+          <div class="portrait-brick" aria-hidden="true"></div>
+          <div class="portrait-frame glass">
+            <img src="images/ueber-uns-bild.jpg" width="1000" height="1784" loading="lazy" decoding="async"
+              alt="Mann meditiert allein in einer hohen, hellen Halle mit Lichtstreifen">
+            <figcaption class="portrait-cap glass">
+              <span>Geschäftsführer</span>
+              <strong>Amir Hossein Sharifian</strong>
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Kontakt ============ -->
+    <section class="section kontakt" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container">
+        <h2 id="kontakt-title" class="reveal">Erzählen Sie uns<br>von Ihrem Projekt.</h2>
+        <p class="lead reveal">Wir freuen uns auf Ihre Nachricht und melden uns persönlich bei Ihnen.</p>
+
+        <div class="kontakt-grid">
+          <form class="contact-form glass reveal" id="contact-form" action="kontakt.php" method="post" novalidate>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="c-name">Name *</label>
+                <input type="text" id="c-name" name="name" autocomplete="name" maxlength="80" required>
+                <p class="field-error" id="err-name" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="c-email">E-Mail *</label>
+                <input type="email" id="c-email" name="email" autocomplete="email" maxlength="120" required>
+                <p class="field-error" id="err-email" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-phone">Telefon <small>(optional)</small></label>
+              <input type="tel" id="c-phone" name="phone" autocomplete="tel" maxlength="30">
+            </div>
+
+            <div class="field">
+              <label for="c-message">Nachricht *</label>
+              <textarea id="c-message" name="message" rows="5" maxlength="1200" required></textarea>
+              <p class="field-error" id="err-message" role="alert"></p>
+            </div>
+
+            <!-- Honeypot gegen Spam-Bots: bleibt für Menschen unsichtbar -->
+            <div class="hp" aria-hidden="true">
+              <label for="c-website">Website</label>
+              <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="field field-check">
+              <input type="checkbox" id="c-privacy" name="privacy" required>
+              <label for="c-privacy">
+                Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
+                gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *
+              </label>
+              <p class="field-error" id="err-privacy" role="alert"></p>
+            </div>
+
+            <button type="submit" class="btn btn-solid btn-wide" id="form-submit">Nachricht senden</button>
+            <p class="form-hint">Ihre Angaben werden verschlüsselt übertragen und nur zur Bearbeitung Ihrer Anfrage verwendet.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-side">
+            <div class="contact-card glass reveal">
+              <h3>MonoBau GmbH</h3>
+              <ul class="contact-list">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                  <span>Pappelwisch 5, 22415 Hamburg</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                  <a href="tel:+494058969540">040 589 695 40</a>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg>
+                  <a href="tel:+4915254184659">+49 152 54184659</a>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+                  <a href="mailto:info@monobau.eu">info@monobau.eu</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="daybar glass reveal" id="daybar" aria-label="Datum, Wetter und besonderer Tag" hidden>
+              <div class="daybar-row">
+                <p class="daybar-date" id="day-date"></p>
+                <div class="daybar-weather" id="weather">
+                  <svg id="weather-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+                  <span id="weather-text" role="status"></span>
+                  <button type="button" class="daybar-link" id="weather-enable" hidden>Wetter laden</button>
+                </div>
+              </div>
+              <p class="daybar-day">
+                <span class="daybar-dot" aria-hidden="true"></span>
+                <span id="day-label"></span>
+                <strong id="day-name"></strong>
+                <small id="day-note"></small>
+              </p>
+            </div>
+
+            <div class="map-card glass reveal">              <iframe class="map-frame" id="map-frame" data-src="https://www.google.com/maps?q=Pappelwisch+5,+22415+Hamburg&amp;output=embed"
+                title="Standort MonoBau GmbH, Pappelwisch 5, Hamburg" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <a class="map-label glass" id="map-label" hidden target="_blank" rel="noopener"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Pappelwisch+5%2C+22415+Hamburg"
+                aria-label="MonoBau GmbH, Pappelwisch 5, 22415 Hamburg – in Google Maps öffnen (neuer Tab)">
+                <strong>MonoBau GmbH</strong>
+                <span>Pappelwisch 5, 22415 Hamburg</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+              </a>
+              <div class="map-consent" id="map-consent">
+                <div class="map-consent-box glass">
+                  <p>Die Karte wird von Google bereitgestellt und erst nach Ihrer Zustimmung geladen. Dabei wird Ihre IP-Adresse an Google übertragen.</p>
+                  <button type="button" class="btn btn-solid" id="map-enable">Karte laden</button>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Cookie-Consent-Banner -->
-  <div class="cookie-banner" id="cookie-banner" hidden>
-    <div class="cookie-banner-box">
-      <div class="cookie-banner-main">
-        <h3>Cookie-Einstellungen</h3>
-        <p>
-          Wir nutzen auf dieser Website technisch notwendige Funktionen sowie optional externe Inhalte
-          (Google Maps), die beim Laden Cookies setzen und Daten an Drittanbieter übermitteln können.
-          Sie können selbst entscheiden, welche Kategorien Sie zulassen. Mehr dazu in unserer
-          <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.
-        </p>
+  <!-- ============ Fußzeile ============ -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-claim">Präzise gebaut.<br>Sauber übergeben.</p>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><button type="button" id="cookie-settings">Cookie-Einstellungen</button></li>
+        </ul>
+      </div>
+      <div class="footer-word" aria-hidden="true">MONOBAU</div>
+      <p class="footer-meta">© <span id="year">2026</span> MonoBau GmbH · Pappelwisch 5, 22415 Hamburg · Designed by <a class="credit" href="https://bitbins.de" target="_blank" rel="noopener">Jonas</a></p>
+    </div>
+  </footer>
 
-        <div class="cookie-banner-categories" id="cookie-banner-categories" hidden>
-          <div class="cookie-category">
-            <div class="cookie-category-head">
-              <span>Technisch notwendig</span>
-              <span class="cookie-toggle cookie-toggle-locked" aria-hidden="true"><span class="cookie-toggle-dot"></span></span>
-            </div>
-            <p>Immer aktiv – erforderlich für den grundlegenden Betrieb der Website (z. B. Speicherung Ihrer Cookie-Auswahl).</p>
+  <!-- ============ Cookie-Einwilligung ============ -->
+  <div class="cookie-banner glass" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
+    <div class="cookie-main">
+      <h2 id="cookie-title">Ihre Privatsphäre</h2>
+      <p id="cookie-text">
+        Wir verwenden nur technisch notwendige Speicherungen. Optional können Sie externe Inhalte
+        (Google Maps) und die Wetteranzeige (Open-Meteo) zulassen – dabei werden Daten an die Anbieter übertragen. Ihre Wahl können Sie jederzeit im
+        Footer unter „Cookie-Einstellungen“ ändern. Details in der
+        <a href="datenschutz.html">Datenschutzerklärung</a> und im <a href="impressum.html">Impressum</a>.
+      </p>
+
+      <div class="cookie-cats" id="cookie-cats" hidden>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head"><span>Technisch notwendig</span><span class="switch is-locked" aria-hidden="true"><i></i></span></div>
+          <p>Immer aktiv. Speichert Ihre Auswahl auf diesem Gerät.</p>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <span id="maps-label">Externe Inhalte (Google Maps)</span>
+            <button type="button" class="switch" id="switch-maps" role="switch" aria-checked="false" aria-labelledby="maps-label"><i></i></button>
           </div>
-
-          <div class="cookie-category">
-            <div class="cookie-category-head">
-              <span>Externe Inhalte (Google Maps)</span>
-              <button type="button" class="cookie-toggle" id="cookie-toggle-maps" role="switch" aria-checked="false" aria-label="Google Maps zulassen">
-                <span class="cookie-toggle-dot"></span>
-              </button>
-            </div>
-            <p>Lädt die interaktive Standortkarte von Google. Dabei wird Ihre IP-Adresse an Google übertragen.</p>
+          <p>Zeigt unsere interaktive Standortkarte. Ihre IP-Adresse wird an Google übertragen.</p>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <span id="weather-label">Wetteranzeige (Open-Meteo)</span>
+            <button type="button" class="switch" id="switch-weather" role="switch" aria-checked="false" aria-labelledby="weather-label"><i></i></button>
           </div>
+          <p>Zeigt das aktuelle Wetter für Hamburg. Ihre IP-Adresse wird an Open-Meteo übertragen.</p>
         </div>
+      </div>
 
-        <div class="cookie-banner-actions">
-          <button type="button" class="cookie-btn cookie-btn-ghost" id="cookie-customize-btn">Personalisieren</button>
-          <button type="button" class="cookie-btn cookie-btn-outline" id="cookie-reject-btn">Ablehnen</button>
-          <button type="button" class="cookie-btn cookie-btn-solid" id="cookie-accept-btn">Alle akzeptieren</button>
-        </div>
-
-        <div class="cookie-banner-save" id="cookie-save-row" hidden>
-          <button type="button" class="cookie-btn cookie-btn-solid" id="cookie-save-btn">Auswahl speichern</button>
-        </div>
+      <div class="cookie-actions">        <button type="button" class="btn btn-ghost" id="cookie-custom">Einstellungen</button>
+        <button type="button" class="btn btn-solid" id="cookie-reject">Alle ablehnen</button>
+        <button type="button" class="btn btn-solid" id="cookie-accept">Alle akzeptieren</button>
+        <button type="button" class="btn btn-solid" id="cookie-save" hidden>Auswahl speichern</button>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=20260826"></script>
+  <script src="script.js?v=20261155" defer></script>
 </body>
 
 </html>
