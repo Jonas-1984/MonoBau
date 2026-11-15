@@ -16,8 +16,9 @@ Hosting und Domain: Hetzner (Webhosting, Apache + PHP). Domain: monobau.eu. E-Ma
 | `tools/build-deploy.ps1` | Erzeugt den Upload-Ordner `deploy/` (siehe unten) |
 | `fonts/` | Montserrat (lokal, SIL OFL) – keine Verbindung zu Google Fonts |
 
-Nicht Teil der Website (liegen nur im Projektordner, werden nicht hochgeladen): `gallery/`, `blackboard/`, `leistung/`,
-`levels/`, `originals/`, `hamburg/`, `icons/`, die nicht mehr verwendeten Bilder in `images/` und die Original-Bilder in `projects/`.
+Der Projektordner enthält nur die Website und das, was sie braucht (genutzte Bilder, Schriften, Server-Dateien, Build-Skript).
+Alte, nicht mehr verwendete Dateien (frühere Hintergründe, Leistungs- und Galerie-Bilder, Original-Projektfotos, Hamburg-Kartendaten)
+wurden in den Ordner MonoBau-Archiv neben dem Projekt verschoben. Der Ordner deploy/ entsteht durch 	ools\build-deploy.ps1.
 
 ## So kommt die Seite zu Hetzner
 
