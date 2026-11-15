@@ -43,6 +43,7 @@ wurden in den Ordner MonoBau-Archiv neben dem Projekt verschoben. Der Ordner dep
    - Cookie-Banner: „Alle ablehnen“ → Karte und Wetter laden nicht; „Cookie-Einstellungen“ im Footer → Auswahl änderbar.
    - Sicherheits-Header prüfen: <https://securityheaders.com> und <https://www.ssllabs.com/ssltest/> (Ziel: A / A+).
    - Eine nicht vorhandene Adresse aufrufen: die Seite `404.html` muss erscheinen.
+   - Gerät die Seite in eine Weiterleitungsschleife (Browser meldet „zu viele Weiterleitungen“), steht der Server hinter einem Proxy: dann in der `.htaccess` die Bedingung `%{HTTPS} !=on` durch `%{HTTP:X-Forwarded-Proto} !=https` ersetzen bzw. den Hetzner-Support fragen.
    - Meldet der Server „500 Internal Server Error“, die Zeilen der `.htaccess` abschnittsweise auskommentieren
      (häufigste Ursache: `Options -Indexes` oder ein nicht freigeschaltetes Apache-Modul) und den Hetzner-Support fragen.
 
@@ -51,7 +52,7 @@ wurden in den Ordner MonoBau-Archiv neben dem Projekt verschoben. Der Ordner dep
 Diese Angaben kenne ich nicht. Sie stehen als **rot markierte Platzhalter** in den Rechtstexten (`tools\build-deploy.ps1` zählt sie):
 
 1. **Impressum** (`impressum.html`): Registergericht und HRB-Nummer, USt-IdNr., ggf. Handwerkskammer und Eintragungsnummer,
-   Verbraucherstreitbeilegung (nur die zutreffende Variante), Bildnachweis (Urheber der Freepik-Bilder, KI-Kennzeichnung).
+   Verbraucherstreitbeilegung (nur die zutreffende Variante), Bildnachweis (Autorenname je Bild prüfen, Quelle des Bildes im Bereich „Home“, KI-Kennzeichnung).
 2. **Datenschutzerklärung** (`datenschutz.html`): Aufbewahrungsdauer der Server-Logfiles (steht in konsoleH).
 3. Beide Seiten **anwaltlich prüfen lassen** und danach die „Hinweis für den Betreiber“-Kästen löschen.
 
@@ -61,8 +62,12 @@ Diese Angaben kenne ich nicht. Sie stehen als **rot markierte Platzhalter** in d
   *nicht-kommerzielle* Nutzung gedacht. Eine Firmenwebsite ist kommerziell. Entweder bei Open-Meteo ein kommerzielles
   Angebot buchen (dann kommt ein API-Schlüssel in `script.js`, `WX_URL`) oder die Wetteranzeige entfernen. Bis dahin
   Nutzungsbedingungen prüfen: <https://open-meteo.com/en/terms>.
-- **Bilder (Freepik):** Hintergrund, Titelbild und „Über uns“-Bild stammen aus Freepik. Prüfen, ob die vorhandene Lizenz
-  kommerzielle Nutzung erlaubt und ob eine Namensnennung nötig ist (Free-Lizenz: ja, Premium: nein) und diese im Impressum eintragen.
+- **Bilder (Magnific, Free-Lizenz mit Namensnennung):** Hintergrund, Bild „Über uns“, Bildstreifen im Bereich „Home“ und das Vorschaubild stammen von Magnific.
+  Die Lizenz erlaubt die kommerzielle Nutzung, verlangt aber die Namensnennung des Urhebers im Format „designed by starline - Magnific.com“ mit Link auf
+  <https://www.magnific.com>. Der Hinweis steht in der Fußzeile der Startseite und auf Impressum, Datenschutz, 404-Seite und der Formular-Antwortseite.
+  **Der Name „starline“ stammt aus dem Lizenztext. Hat ein Bild einen anderen Urheber, muss dessen Name an allen genannten Stellen stehen**
+  (Suchen nach „starline“). Der einzige Bindestrich der Seite steht in diesem Pflichttext, weil die Lizenz ihn vorgibt.
+  Nicht von Magnific: die Galerie-Fotos und das Bild im Bereich „Home“ (Quelle im Impressum eintragen).
 - **Foto „Über uns“:** Es zeigt eine anonyme Person und trägt den Namen des Geschäftsführers. Das kann irreführend wirken.
   Besser: ein echtes Porträt oder die Namensbeschriftung entfernen.
 - **Google Maps:** Die Karte wird über die einfache Einbettung geladen, erst nach Einwilligung. Das Adress-Feld von Google wird
@@ -91,6 +96,8 @@ Elektroarbeiten nicht mehr (der Abschnitt „Leistungen“ wurde entfernt). Wer 
 z. B. einen kurzen Abschnitt oder eigene Unterseiten je Leistung. Versteckter Text für Suchmaschinen ist verboten und wird abgestraft.
 ## Wartung
 
+- **Bilder ersetzen:** Browser speichern Bilder bis zu einem Monat. Ein Bild deshalb unter neuem Dateinamen hochladen (z. B. `background-mountain-2.jpg`) und den Namen in `style.css` bzw. `index.html` anpassen.
+- **Bildstreifen im Bereich „Home“:** drei Größen (`band-abstract.png` 1920 px, `band-abstract-t.png` 1280 px, `band-abstract-m.png` 960 px), die CSS wählt nach Bildschirmbreite.
 - **Nach jeder Änderung an `style.css` oder `script.js`** die Zahl bei `?v=…` in allen HTML-Dateien erhöhen, sonst sehen
   Besucher die alte Version (Zwischenspeicher bis zu einer Woche).
 - **Content-Security-Policy** steht an zwei Stellen: als `<meta>` in den HTML-Dateien und in der `.htaccess`. Wird ein
@@ -104,7 +111,7 @@ z. B. einen kurzen Abschnitt oder eigene Unterseiten je Leistung. Versteckter Te
 
 ## Sicherheit (Überblick)
 
-HTTPS erzwungen (HSTS), strenge Content-Security-Policy ohne Inline-Skripte, `X-Frame-Options`/`frame-ancestors`
+HTTPS erzwungen (HSTS ohne `includeSubDomains`, siehe Kommentar in der `.htaccess`), strenge Content-Security-Policy ohne Inline-Skripte, `X-Frame-Options`/`frame-ancestors`
 gegen Einbettung, `nosniff`, Referrer- und Permissions-Policy, keine Verzeichnislisten, keine Auslieferung interner Dateien,
 keine externen Schriften oder Skripte. Formular: Eingabe-Prüfung auf Client und Server, Schutz vor Header-Injection,
 Herkunftsprüfung, verstecktes Feld und Ausfüllzeit gegen Bots, Mengenbegrenzung je Absender, keine Speicherung von Anfragen

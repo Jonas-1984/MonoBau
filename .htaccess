@@ -23,11 +23,13 @@ AddDefaultCharset UTF-8
 # Hinweis: Die Content-Security-Policy steht zusätzlich als <meta> in den HTML-Dateien. Wird eine der
 # beiden Stellen geändert (z. B. neuer externer Dienst), bitte beide anpassen.
 <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # ohne includeSubDomains: Browser merken sich HSTS ein Jahr lang, ein Fehler waere nicht rueckgaengig zu machen.
+  # Erst aktivieren, wenn ALLE Unterdomains (z. B. mail., webmail.) ein gueltiges HTTPS-Zertifikat haben.
+  Header always set Strict-Transport-Security "max-age=31536000"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "DENY"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=(), browsing-topics=()"
   Header always set Cross-Origin-Opener-Policy "same-origin"
   Header always set Cross-Origin-Resource-Policy "same-origin"
   Header always set X-Permitted-Cross-Domain-Policies "none"

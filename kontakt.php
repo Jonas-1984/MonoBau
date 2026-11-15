@@ -58,14 +58,14 @@ function respond(int $status, bool $ok, string $message): void
     echo '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<meta name="robots" content="noindex, nofollow"><meta name="color-scheme" content="dark">'
-        . '<title>' . $title . ' – MonoBau GmbH</title>'
+        . '<title>' . $title . ' | MonoBau GmbH</title>'
         . '<link rel="icon" href="favicon.svg" type="image/svg+xml">'
         . '<link rel="stylesheet" href="style.css"></head>'
         . '<body class="legal-page"><div class="background" aria-hidden="true"></div>'
         . '<main class="legal"><div class="container"><div class="legal-wrap glass">'
         . '<h1>' . $title . '</h1><p>' . $text . '</p>'
         . '<p><a class="btn btn-red-glass glass" href="index.html#kontakt">Zurück zur Startseite</a></p>'
-        . '</div></div></main></body></html>';
+        . '</div><p class="legal-credit">Hintergrund und Bilder: <a href="https://www.magnific.com" target="_blank" rel="noopener" lang="en">designed by starline - Magnific.com</a></p></div></main></body></html>';
     exit;
 }
 
@@ -158,7 +158,8 @@ try {
     $origin  = isset($_SERVER['HTTP_ORIGIN']) ? (string) $_SERVER['HTTP_ORIGIN'] : '';
     $referer = isset($_SERVER['HTTP_REFERER']) ? (string) $_SERVER['HTTP_REFERER'] : '';
     $source  = ($origin !== '' && $origin !== 'null') ? $origin : $referer;
-    if ($source !== '' && !in_array(host_of($source), ALLOWED_HOSTS, true)) {
+    // Browser senden bei POST immer Origin oder Referer; fehlt beides, ist es kein Besucher mit Browser
+    if ($source === '' || !in_array(host_of($source), ALLOWED_HOSTS, true)) {
         respond(403, false, 'Die Anfrage konnte nicht zugeordnet werden. ' . FALLBACK_NOTE);
     }
 
