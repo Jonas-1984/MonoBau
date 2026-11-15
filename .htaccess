@@ -9,6 +9,9 @@ AddDefaultCharset UTF-8
 # --- 1) Immer HTTPS und immer www.monobau.eu (gleiche Adresse wie in canonical/sitemap) ----------
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # Unnoetige HTTP-Methoden sperren
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG) [NC]
+  RewriteRule ^ - [F]
   # Zertifikats-Prüfungen (Let's Encrypt) nicht umleiten
   RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
   RewriteCond %{HTTPS} !=on [OR]
@@ -27,6 +30,7 @@ AddDefaultCharset UTF-8
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()"
   Header always set Cross-Origin-Opener-Policy "same-origin"
   Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
   Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.open-meteo.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; manifest-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
   Header always unset X-Powered-By
   Header unset X-Powered-By

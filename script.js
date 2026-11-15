@@ -410,7 +410,13 @@
     if (!el) return;
     el.textContent = msg || '';
     var field = el.closest('.field');
-    if (field) field.classList.toggle('has-error', !!msg);
+    if (field) {
+      field.classList.toggle('has-error', !!msg);
+      var control = field.querySelector('input, textarea');
+      if (control) {
+        if (msg) control.setAttribute('aria-invalid', 'true'); else control.removeAttribute('aria-invalid');
+      }
+    }
   }
 
   function setStatus(text, mailtoHref) {

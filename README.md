@@ -67,6 +67,27 @@ Diese Angaben kenne ich nicht. Sie stehen als **rot markierte Platzhalter** in d
 - **Google Maps:** Die Karte wird über die einfache Einbettung geladen, erst nach Einwilligung. Das Adress-Feld von Google wird
   durch Verschieben des Rahmens ausgeblendet. Ändert Google den Aufbau, ggf. den Wert `top: -140px` in `style.css` anpassen.
 
+## Suchmaschinen (SEO) nach dem Livegang
+
+Technisch ist die Seite vorbereitet (ein `<h1>`, eindeutiger Titel und Beschreibung, Canonical, `hreflang`, Open-Graph-/Twitter-Vorschau,
+strukturierte Daten als JSON-LD, `sitemap.xml`, `robots.txt`, schnelle Ladezeit, mobilfreundlich, alle Bilder mit Alt-Text).
+Damit Google, Bing und andere die Seite finden, muss der Inhaber einmalig Folgendes tun:
+
+1. **Google Search Console** (<https://search.google.com/search-console>): Property `https://www.monobau.eu/` anlegen, per
+   DNS-Eintrag oder HTML-Datei bestätigen, dann `https://www.monobau.eu/sitemap.xml` einreichen.
+2. **Bing Webmaster Tools** (<https://www.bing.com/webmasters>): Seite hinzufügen (Import aus der Search Console möglich) und die
+   Sitemap einreichen. Bing speist auch DuckDuckGo, Ecosia, Yahoo und Qwant. Optional: IndexNow aktivieren (schnellere Aufnahme).
+3. **Google Unternehmensprofil** (<https://business.google.com>) mit derselben Adresse und Telefonnummer wie im Impressum anlegen.
+   Name, Adresse und Telefon müssen überall (Seite, Profil, Verzeichnisse) identisch sein. Das ist der wichtigste Hebel für
+   „Bauunternehmen Hamburg“-Suchen.
+4. Bestätigungs-Codes der Dienste (Meta-Tag oder Datei) nur nach Rücksprache einfügen. Sie gehören in den `<head>` der `index.html`
+   bzw. als Datei in den Hauptordner. Neue Meta-Tags erlaubt die Content-Security-Policy ohne Änderung.
+5. Nach dem Livegang mit dem Rich-Results-Test (<https://search.google.com/test/rich-results>) die strukturierten Daten prüfen und
+   mit PageSpeed Insights (<https://pagespeed.web.dev>) die Ladezeit messen.
+
+Inhaltlich gilt: Suchmaschinen bewerten Text. Die Seite nennt Leistungen wie Trockenbau, Putz-, Maler-, Boden-, Fliesen-, Sanitär- und
+Elektroarbeiten nicht mehr (der Abschnitt „Leistungen“ wurde entfernt). Wer für diese Begriffe gefunden werden will, braucht dafür sichtbaren Text,
+z. B. einen kurzen Abschnitt oder eigene Unterseiten je Leistung. Versteckter Text für Suchmaschinen ist verboten und wird abgestraft.
 ## Wartung
 
 - **Nach jeder Änderung an `style.css` oder `script.js`** die Zahl bei `?v=…` in allen HTML-Dateien erhöhen, sonst sehen

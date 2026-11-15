@@ -10,9 +10,13 @@
   <meta name="theme-color" content="#131316">
 
   <title>MonoBau GmbH Hamburg – Ausbau, Sanierung &amp; Renovierung</title>
-  <meta name="description" content="MonoBau GmbH aus Hamburg: Ausbau, Sanierung und Renovierung aus einer Hand – von der ersten Idee bis zur fertigen Übergabe. Projekte in Hamburg, deutschlandweit und im Ausland.">
+  <meta name="description" content="MonoBau GmbH aus Hamburg: Ausbau, Sanierung und Renovierung aus einer Hand – von der ersten Idee bis zur Übergabe. Jetzt Projekt anfragen.">
   <link rel="canonical" href="https://www.monobau.eu/">
-  <meta name="robots" content="index, follow">
+  <link rel="alternate" hreflang="de" href="https://www.monobau.eu/">
+  <link rel="alternate" hreflang="x-default" href="https://www.monobau.eu/">
+  <meta name="geo.region" content="DE-HH">
+  <meta name="geo.placename" content="Hamburg">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -21,6 +25,7 @@
   <meta property="og:description" content="Ausbau, Sanierung und Renovierung in Hamburg und deutschlandweit – aus einer Hand.">
   <meta property="og:url" content="https://www.monobau.eu/">
   <meta property="og:image" content="https://www.monobau.eu/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Berghütte auf einem Grat im Nebel">
@@ -28,31 +33,74 @@
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="images/hero-aquarell.jpg" as="image" media="(min-width: 961px)">
   <link rel="preload" href="images/background-mountain.jpg" as="image" media="(min-width: 641px)" fetchpriority="high">
   <link rel="preload" href="images/background-mountain-m.jpg" as="image" media="(max-width: 640px)" fetchpriority="high">
   <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261161">
+  <link rel="stylesheet" href="style.css?v=20261162">
   <script src="boot.js"></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "name": "MonoBau GmbH",
-    "url": "https://www.monobau.eu/",
-    "image": "https://www.monobau.eu/images/og-image.jpg",
-    "telephone": "+494058969540",
-    "email": "info@monobau.eu",
-    "legalName": "MonoBau GmbH",
-    "founder": { "@type": "Person", "name": "Amir Hossein Sharifian" },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Pappelwisch 5",
-      "postalCode": "22415",
-      "addressLocality": "Hamburg",
-      "addressCountry": "DE"
-    },
-    "areaServed": ["Hamburg", "Deutschland"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.monobau.eu/#website",
+        "url": "https://www.monobau.eu/",
+        "name": "MonoBau GmbH",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://www.monobau.eu/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.monobau.eu/#webpage",
+        "url": "https://www.monobau.eu/",
+        "name": "MonoBau GmbH Hamburg – Ausbau, Sanierung & Renovierung",
+        "isPartOf": { "@id": "https://www.monobau.eu/#website" },
+        "about": { "@id": "https://www.monobau.eu/#organization" },
+        "primaryImageOfPage": { "@id": "https://www.monobau.eu/#primaryimage" },
+        "inLanguage": "de-DE"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.monobau.eu/#primaryimage",
+        "url": "https://www.monobau.eu/images/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      {
+        "@type": "GeneralContractor",
+        "@id": "https://www.monobau.eu/#organization",
+        "name": "MonoBau GmbH",
+        "legalName": "MonoBau GmbH",
+        "url": "https://www.monobau.eu/",
+        "logo": { "@type": "ImageObject", "url": "https://www.monobau.eu/images/logo.svg" },
+        "image": { "@id": "https://www.monobau.eu/#primaryimage" },
+        "telephone": "+494058969540",
+        "email": "info@monobau.eu",
+        "employee": { "@type": "Person", "name": "Amir Hossein Sharifian", "jobTitle": "Geschäftsführer" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Pappelwisch 5",
+          "postalCode": "22415",
+          "addressLocality": "Hamburg",
+          "addressRegion": "Hamburg",
+          "addressCountry": "DE"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+494058969540",
+          "email": "info@monobau.eu",
+          "availableLanguage": "de"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -97,7 +145,7 @@
     </div>
   </header>
 
-  <main id="inhalt">
+  <main id="inhalt" tabindex="-1">
 
     <!-- ============ Hero ============ -->
     <section class="hero" aria-labelledby="hero-title">
@@ -194,51 +242,51 @@
         <div class="slider glass reveal" id="slider" role="region" aria-roledescription="Karussell" aria-label="Projektbilder">
           <div class="slides" id="slides">
           <figure class="slide is-active is-portrait" role="group" aria-roledescription="Bild" aria-label="1 von 12">
-            <img src="projects/slides/hallerstrasse-01.jpg" data-src="projects/slides/hallerstrasse-01.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img src="projects/slides/hallerstrasse-01.jpg" data-src="projects/slides/hallerstrasse-01.jpg" width="720" height="1080" alt="Projektbild Hallerstraße, Hamburg (1 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="2 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-02.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-02.jpg" width="720" height="1080" alt="Projektbild Hallerstraße, Hamburg (2 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="3 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-03.jpg" width="1120" height="745" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-03.jpg" width="1120" height="745" alt="Projektbild Hallerstraße, Hamburg (3 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="4 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-04.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-04.jpg" width="1120" height="747" alt="Projektbild Hallerstraße, Hamburg (4 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="5 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-05.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-05.jpg" width="1120" height="747" alt="Projektbild Hallerstraße, Hamburg (5 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="6 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-06.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-06.jpg" width="720" height="1080" alt="Projektbild Hallerstraße, Hamburg (6 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide is-portrait" role="group" aria-roledescription="Bild" aria-label="7 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-08.jpg" width="720" height="1080" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-08.jpg" width="720" height="1080" alt="Projektbild Hallerstraße, Hamburg (7 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="8 von 12" aria-hidden="true">
-            <img data-src="projects/slides/hallerstrasse-09.jpg" width="1120" height="747" alt="Projekt Hallerstraße, Hamburg" decoding="async">
+            <img data-src="projects/slides/hallerstrasse-09.jpg" width="1120" height="747" alt="Projektbild Hallerstraße, Hamburg (8 von 8)" decoding="async">
             <figcaption class="slide-cap glass">Hallerstraße, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="9 von 12" aria-hidden="true">
-            <img data-src="projects/slides/langenhorn-03.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <img data-src="projects/slides/langenhorn-03.jpg" width="1120" height="747" alt="Projektbild Langenhorner Chaussee, Hamburg (1 von 4)" decoding="async">
             <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="10 von 12" aria-hidden="true">
-            <img data-src="projects/slides/langenhorn-01.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <img data-src="projects/slides/langenhorn-01.jpg" width="1120" height="747" alt="Projektbild Langenhorner Chaussee, Hamburg (2 von 4)" decoding="async">
             <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="11 von 12" aria-hidden="true">
-            <img data-src="projects/slides/langenhorn-02.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <img data-src="projects/slides/langenhorn-02.jpg" width="1120" height="747" alt="Projektbild Langenhorner Chaussee, Hamburg (3 von 4)" decoding="async">
             <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="Bild" aria-label="12 von 12" aria-hidden="true">
-            <img data-src="projects/slides/langenhorn-04.jpg" width="1120" height="747" alt="Projekt Langenhorner Chaussee, Hamburg" decoding="async">
+            <img data-src="projects/slides/langenhorn-04.jpg" width="1120" height="747" alt="Projektbild Langenhorner Chaussee, Hamburg (4 von 4)" decoding="async">
             <figcaption class="slide-cap glass">Langenhorner Chaussee, Hamburg</figcaption>
           </figure>
           </div>
@@ -287,7 +335,7 @@
         <figure class="about-portrait reveal">
           <div class="portrait-brick" aria-hidden="true"></div>
           <div class="portrait-frame glass">
-            <img src="images/ueber-uns-bild.jpg" width="1000" height="1784" loading="lazy" decoding="async"
+            <img src="images/ueber-uns-bild.jpg" width="840" height="1499" loading="lazy" decoding="async"
               alt="Mann meditiert allein in einer hohen, hellen Halle mit Lichtstreifen">
             <figcaption class="portrait-cap glass">
               <span>Geschäftsführer</span>
@@ -310,12 +358,12 @@
             <div class="field-row">
               <div class="field">
                 <label for="c-name">Name *</label>
-                <input type="text" id="c-name" name="name" autocomplete="name" maxlength="80" required>
+                <input type="text" id="c-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="err-name">
                 <p class="field-error" id="err-name" role="alert"></p>
               </div>
               <div class="field">
                 <label for="c-email">E-Mail *</label>
-                <input type="email" id="c-email" name="email" autocomplete="email" maxlength="120" required>
+                <input type="email" id="c-email" name="email" autocomplete="email" maxlength="120" required aria-describedby="err-email">
                 <p class="field-error" id="err-email" role="alert"></p>
               </div>
             </div>
@@ -327,7 +375,7 @@
 
             <div class="field">
               <label for="c-message">Nachricht *</label>
-              <textarea id="c-message" name="message" rows="5" maxlength="1200" required></textarea>
+              <textarea id="c-message" name="message" rows="5" maxlength="1200" required aria-describedby="err-message"></textarea>
               <p class="field-error" id="err-message" role="alert"></p>
             </div>
 
@@ -338,7 +386,7 @@
             </div>
 
             <div class="field field-check">
-              <input type="checkbox" id="c-privacy" name="privacy" required>
+              <input type="checkbox" id="c-privacy" name="privacy" required aria-describedby="err-privacy">
               <label for="c-privacy">
                 Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
                 gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *
@@ -469,7 +517,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261161" defer></script>
+  <script src="script.js?v=20261162" defer></script>
 </body>
 
 </html>
