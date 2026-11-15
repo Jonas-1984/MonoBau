@@ -597,29 +597,33 @@ p {
   align-items: center;
 }
 
-/* Dunkles, randloses Band hinter Absatz, Tasten und Kennzahlen:
-   volle Seitenbreite (links bis rechts), liegt auch unter dem Foto, oben/unten weich ausgeblendet */
-.hero-sub {
-  position: relative;
-}
-
-.hero-sub::before {
+/* Bild-Streifen ueber die volle Breite des Home-Bereichs: liegt unter Texten und Foto,
+   oben und unten weich ausgeblendet (kein dunkler Hintergrund mehr) */
+.hero::before {
   content: '';
   position: absolute;
   z-index: -1;
-  left: -100vw;
-  right: -100vw;
-  top: -1.4rem;
-  bottom: 1.6rem;
+  left: 0;
+  right: 0;
+  top: 8%;
+  bottom: 4%;
   pointer-events: none;
-  background: linear-gradient(to bottom,
-      rgba(8, 8, 12, 0) 0%,
-      rgba(8, 8, 12, 0.5) 22%,
-      rgba(8, 8, 12, 0.5) 78%,
-      rgba(8, 8, 12, 0) 100%);
+  background: url('images/band-abstract.png') center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 70%, transparent 100%);
 }
 
-/* Text liegt ueber dem Foto, das Foto ueber dem Band */
+/* Handy: kleinere Fassung des Bildes */
+@media (max-width: 640px) {
+  .hero::before {
+    background-image: url('images/band-abstract-m.png');
+  }
+}
+
+.hero-sub {
+  position: relative;
+}
+/* Text liegt ueber dem Foto, das Foto ueber dem Bild-Streifen */
 .hero h1,
 .hero-lead,
 .hero-actions,
@@ -664,9 +668,14 @@ p {
   to { transform: none; }
 }
 
+/* "uebergeben." : die Buchstaben selbst sind rotes Glas (durchscheinend, duenner heller Rand, weiches Leuchten),
+   ohne Hintergrundfeld. Echten Weichzeichner in Buchstaben gibt es in CSS nicht. */
 .hero h1 em {
   font-style: normal;
-  color: var(--red);
+  color: rgba(224, 0, 0, 0.58);
+  -webkit-text-stroke: 1px rgba(255, 196, 196, 0.8);
+  paint-order: stroke fill;
+  text-shadow: 0 0 0.12em rgba(255, 80, 80, 0.55), 8px 5px 6px rgba(17, 18, 18, 0.57);
 }
 
 .hero-flow-slot {
