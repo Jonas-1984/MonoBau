@@ -22,6 +22,7 @@
 
   function setMenu(open) {
     nav.classList.toggle('is-open', open);
+    header.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
   }
